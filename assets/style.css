@@ -1,0 +1,27 @@
+:root {
+	--font-size: 16px;
+	--color: black;
+	--secondary-color: teal;
+	--gutter: calc(var(--font-size)*1.618);
+	--highlight-color: aqua;
+}
+/* root was 20px, do i change that back? */
+
+@media (min-width: 600px) {
+	:root {
+		--font-size: 32px;
+		--gutter: calc(var(--font-size)*1.75);
+	}
+}
+
+@media (min-width: 850px) {
+	:root {
+		--font-size: 32px;
+		--gutter: calc(var(--font-size)*2);
+	}
+}
+
+h1 {
+	font-size: var(--font-size);
+	margin: var(--gutter);
+}
