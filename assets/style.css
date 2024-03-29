@@ -7,7 +7,9 @@
 }
 /* root was 20px, do i change that back? */
 
-@media (min-width: 600px) {
+/* variables @ screen widths */
+
+/* @media (min-width: 600px) {
 	:root {
 		--font-size: 32px;
 		--gutter: calc(var(--font-size)*1.75);
@@ -19,7 +21,7 @@
 		--font-size: 32px;
 		--gutter: calc(var(--font-size)*2);
 	}
-}
+} */
 
 h1 {
 	font-size: var(--font-size);
