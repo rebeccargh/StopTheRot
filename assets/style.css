@@ -4,6 +4,7 @@
 	--secondary-color: teal;
 	--gutter: calc(var(--font-size)*1.618);
 	--highlight-color: aqua;
+	--background-color: white;
 }
 /* root was 20px, do i change that back? */
 
@@ -46,7 +47,10 @@ li {
 
 footer {
 	position: fixed;
-	bottom: calc(var(--gutter)*0.75);
+	width: 100vw;
+	bottom: 0;
+	background-color: var(--background-color);
+	padding: calc(var(--gutter)*0.75);
 }
 
 #menu, #home{
