@@ -3,17 +3,17 @@
 		<title>Stop The Rot</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="/assets/reset.css" rel="stylesheet">
-		<link href="https://github.com/rebeccargh/stoptherot/blob/main/assets/style.css" rel="stylesheet">
-		<script defer src="https://github.com/rebeccargh/stoptherot/blob/main/assets/main.js"></script>
+		<link href="assets/reset.css" rel="stylesheet">
+		<link href="assets/style.css" rel="stylesheet">
+		<script defer src="assets/main.js"></script>
 	</head>
 	<body>
 		<section id="menu">
 			<a href="https://rebeccargh.github.io/stoptherot/library">Library</a>
 		</section>
 		<main>
-			<h1>Get up and actually do something for the love of god</h1>
-			<section>
+			<section id="splash">
+				<h1>Get up and actually do something for the love of god</h1>
 				<div id="sliderComp">
 					<div class="slidecontainer">
 						<input type="range" min="1" max="10" step="0.05" value="5" class="slider" id="activitySlider">
@@ -26,6 +26,9 @@
 					<button class="filter-option" data-filter="requiresTransit" onclick=filterActivity(event)>Requires transit?</button>
 					<button class="filter-option" data-filter="productive" onclick=filterActivity(event)>Productive?</button>
 				</div> -->
+				<div id="scrollPrompt">
+					<p>⌄ Scroll to see options</p>
+				</div>
 			</section>
 			<section>
 				<ul id="data-list"></ul>

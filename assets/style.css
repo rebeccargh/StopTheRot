@@ -40,9 +40,21 @@ h1 {
 	margin: var(--gutter);
 }
 
+#splash {
+	height: 80vh;
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
 li {
 	color: var(--color);
 	transition: 0.5s;
+}
+
+#scrollPrompt {
+	position: relative;
+	top: 65vh;
 }
 
 footer {
