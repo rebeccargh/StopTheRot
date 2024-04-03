@@ -15,7 +15,8 @@ const renderItems = (data) => {
 		let listItem =
 			`
 				<li class="${conditionalClass}">
-					<h2>${item.emoji} ${item.itemName}</h2>
+					<p>${item.emoji}</p>
+					<h2>${item.itemName}</h2>
 					<p>Suitable if you're broke?</p>
 						<p>${item.costsMoney}</p>
 					<p><em>Do I have to leave the neighborhood?</em></p>
@@ -39,3 +40,16 @@ fetch('assets/data.json')
 		// And passes the data to the function, above!
 		renderItems(data)
 	})
+
+	// slider output
+
+	var slider = document.getElementById("activitySlider");
+var output = document.getElementById("sliderValue");
+output.innerHTML = slider.value; // Display the default slider value
+
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+
+// if a value is false, add hidden class on button click - will filter by values?

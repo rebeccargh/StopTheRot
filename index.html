@@ -8,12 +8,28 @@
 		<script defer src="assets/main.js"></script>
 	</head>
 	<body>
-		<div id="menu">
+		<section id="menu">
 			<a href="https://rebeccargh.github.io/stoptherot/library">Library</a>
-		</div>
+		</section>
 		<main>
 			<h1>Get up and actually do something for the love of god</h1>
-			<ul id="data-list"></ul>
+			<section>
+				<div id="sliderComp">
+					<div class="slidecontainer">
+						<input type="range" min="1" max="10" value="5" class="slider" id="activitySlider">
+				</div>
+				<div id="sliderValue"></div>
+				<!-- filters - how to label these so it can be targeted -->
+				<!-- <div class="filters">
+					<h3>Filters</h3>
+					<button class="filter-option" data-filter="costsMoney" onclick=filterActivity(event)>Costs money?</button>
+					<button class="filter-option" data-filter="requiresTransit" onclick=filterActivity(event)>Requires transit?</button>
+					<button class="filter-option" data-filter="productive" onclick=filterActivity(event)>Productive?</button>
+				</div> -->
+			</section>
+			<section>
+				<ul id="data-list"></ul>
+			</section>
 		</main>
 		<footer>
 		<p>© Rebecca Hart, 2024</p>
