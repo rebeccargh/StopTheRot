@@ -41,15 +41,14 @@ fetch('assets/data.json')
 		renderItems(data)
 	})
 
-	// slider output
-
+	// Slider output
 	var slider = document.getElementById("activitySlider");
 var output = document.getElementById("sliderValue");
 output.innerHTML = slider.value; // Display the default slider value
 
-// Update the current slider value (each time you drag the slider handle)
+// Update the current slider value (each time you drag the slider handle) & display with 0 DP
 slider.oninput = function() {
-  output.innerHTML = this.value;
+	output.innerHTML = (this.value/1).toFixed(0);
 }
 
 // if a value is false, add hidden class on button click - will filter by values?
