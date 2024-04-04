@@ -9,26 +9,34 @@
 	</head>
 	<body>
 		<section id="menu">
+			<a href="https://rebeccargh.github.io/stoptherot">Reset</a>
 			<a href="https://rebeccargh.github.io/stoptherot/library">Library</a>
 		</section>
 		<main>
 			<section id="splash">
-				<h1>Get up and actually do something for the love of god</h1>
-				<div id="sliderComp">
-					<div class="slidecontainer">
-						<input type="range" min="1" max="10" step="0.05" value="5" class="slider" id="activitySlider">
-				</div>
-				<div id="sliderValue"></div>
-				<!-- filters - how to label these so it can be targeted -->
-				<!-- <div class="filters">
-					<h3>Filters</h3>
-					<button class="filter-option" data-filter="costsMoney" onclick=filterActivity(event)>Costs money?</button>
-					<button class="filter-option" data-filter="requiresTransit" onclick=filterActivity(event)>Requires transit?</button>
-					<button class="filter-option" data-filter="productive" onclick=filterActivity(event)>Productive?</button>
-				</div> -->
-				<div id="scrollPrompt">
-					<p>⌄ Scroll to see options</p>
-				</div>
+				<header>
+					<h1>Get up and actually do something for the love of god</h1>
+					<div id="sliderComp">
+						<div class="slidecontainer">
+							<input type="range" min="1" max="10" step="0.05" value="6" class="slider" id="activitySlider">
+						</div>
+					<div id="sliderValue"></div>
+					<div class="filters">
+						<button id="moneyFilter">Free?</button>
+						<button id="transitFilter">Requires Transit?</button>
+						<button id="productiveFilter">Productive?</button>
+					</div>
+					<!-- filters - how to label these so it can be targeted -->
+					<!-- <div class="filters">
+						<h3>Filters</h3>
+						<button class="filter-option" data-filter="costsMoney" onclick=filterActivity(event)>Costs money?</button>
+						<button class="filter-option" data-filter="requiresTransit" onclick=filterActivity(event)>Requires transit?</button>
+						<button class="filter-option" data-filter="productive" onclick=filterActivity(event)>Productive?</button>
+					</div> -->
+					<div id="scrollPrompt">
+						<a href="#data-list" id="allOptions">See my options!</a>
+					</div>
+				</header>
 			</section>
 			<section>
 				<ul id="data-list"></ul>
