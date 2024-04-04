@@ -16,7 +16,7 @@ const renderItems = (data) => {
 			`
 				<li class="${conditionalClass}">
 					<p>${item.emoji}</p>
-					<h2>${item.itemName}</h2>
+					<h3>${item.itemName}</h3>
 					<p>Suitable if you're broke?</p>
 						<p>${item.costsMoney}</p>
 					<p><em>Do I have to leave the neighborhood?</em></p>
@@ -31,7 +31,7 @@ const renderItems = (data) => {
 	})
 }
 
-// 					// <img src="${item.posterImage}"> img tag goes below h2 if necessary
+// 					// <img src="${item.posterImage}"> img tag goes below h3 if necessary
 
 // Fetch gets your (local) JSON file…
 fetch('assets/data.json')
@@ -73,7 +73,7 @@ document.getElementById('moneyFilter').onclick = () => {
 			  `
 				<li>
 				  <p>${block.emoji}</p>
-				  <h2>${block.itemName}</h2>
+				  <h3>${block.itemName}</h3>
 				  <p><em>Do I have to leave the neighborhood?</em></p>
 				  <p>${block.requiresTransit}</p>
 				  <p><em>Activity Rating</em></p>
@@ -108,7 +108,7 @@ document.getElementById('transitFilter').onclick = () => {
 			  `
 				<li>
 				  <p>${block.emoji}</p>
-				  <h2>${block.itemName}</h2>
+				  <h3>${block.itemName}</h3>
 				  <p>Suitable if you're broke?</p>
 				  <p>${block.costsMoney}</p>
 				  <p><em>Activity Rating</em></p>
@@ -143,7 +143,7 @@ document.getElementById('productiveFilter').onclick = () => {
 			  `
 				<li>
 				  <p>${block.emoji}</p>
-				  <h2>${block.itemName}</h2>
+				  <h3>${block.itemName}</h3>
 				  <p>Suitable if you're broke?</p>
 				  <p>${block.costsMoney}</p>
 				  <p><em>Do I have to leave the neighborhood?</em></p>

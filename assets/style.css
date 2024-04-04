@@ -53,13 +53,19 @@ body {
 	border-radius: var(--font-size);
 }
 
+header {
+	margin-bottom: calc(var(--gutter)*2);
+	margin-top: calc(var(--gutter)*2);
+	text-align: center;
+}
+
 a:hover {
 	color: var(--highlight-color);
 	transition: 0.2s;
 }
 
-header {
-	height: 70vh;
+#filterBox {
+	height: 55vh;
 	width: 60%;
 	position: relative;
 	display: flex;
@@ -77,12 +83,16 @@ header {
 }
 
 h1 {
+	font-size: calc(var(--font-size)*2.5);
+	font-family: monospace;
+}
+h2 {
 	font-size: var(--font-size);
 	font-family: monospace;
 	margin: var(--gutter);
 }
 
-h1, #sliderComp, #scrollPrompt {
+h2, #sliderComp, #scrollPrompt {
 	align-self: center;
 }
 
@@ -174,9 +184,16 @@ li {
 
 footer {
 	position: fixed;
-	width: 100vw;
-	bottom: 0;
+	width: 95vw;
+	bottom: 1%;
+	left: 2.5%;
+	z-index: 1;
+	display: flex;
+	justify-content: space-between;
+	font-family: monospace;
 	background-color: var(--background-color);
+	border: solid 3px var(--color);
+	border-radius: var(--font-size);
 	padding: calc(var(--gutter)*0.75);
 }
 
