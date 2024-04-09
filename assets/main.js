@@ -10,15 +10,15 @@ const renderItems = (data) => {
 		// if (!item.alsoWasWriter) { // Conditional if this is `false` (“not true”)
 		// 	conditionalClass = 'faded' // Update the variable
 		// }
+		let moneyIcon = item.costsMoney === 1 ? '✅' : '❌';
+		let transitIcon = item.requiresTransit === 1 ? '✅' : '❌';
 		let listItem =
 			`
 				<li class="${conditionalClass}">
-					<p>${item.emoji}</p>
+					<p class="emoji">${item.emoji}</p>
 					<h3>${item.itemName}</h3>
-					<p>Suitable if you're broke?</p>
-						<p>${item.costsMoney}</p>
-					<p><em>Do I have to leave the neighborhood?</em></p>
-						<p>${item.requiresTransit}</p>
+					<p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
+					<p><em>Do I have to leave the neighborhood?</em> | ${transitIcon}</p>
 					<p><em>Activity Rating</em></p>
 						<p>${item.activityRating} / 10</p>
 					</a>
@@ -53,13 +53,15 @@ function fetchDataAndRenderBlocks(activityRating) {
                 // Check if the activityRating matches the slider value
                 if (Math.round(block.activityRating) === parseInt(activityRating)) {
                     // Add the block
-                    let listItem =
+					let moneyIcon = block.costsMoney === 1 ? '✅' : '❌';
+					let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
+					let listItem =
                         `
                         <li>
-                            <p>${block.emoji}</p>
-                            <h3>${block.itemName}</h3>
-                            <p><em>Do I have to leave the neighborhood?</em></p>
-                            <p>${block.requiresTransit}</p>
+							<p class="emoji">${block.emoji}</p>
+							<h3>${block.itemName}</h3>
+							<p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
+							<p><em>Do I have to leave the neighborhood?</em> | ${transitIcon}</p>
                             <p><em>Activity Rating</em></p>
                             <p>${block.activityRating} / 10</p>
                         </li>
@@ -105,15 +107,15 @@ document.getElementById('moneyFilter').onclick = () => {
 		data.forEach((block) => {
 		  if (block.costsMoney === costsMoney) {
 			// Add the block
+			let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
 			let listItem =
 			  `
 				<li>
-				  <p>${block.emoji}</p>
-				  <h3>${block.itemName}</h3>
-				  <p><em>Do I have to leave the neighborhood?</em></p>
-				  <p>${block.requiresTransit}</p>
-				  <p><em>Activity Rating</em></p>
-				  <p>${block.activityRating} / 10</p>
+					<p class="emoji">${block.emoji}</p>
+					<h3>${block.itemName}</h3>
+					<p><em>Do I have to leave the neighborhood?</em> | ${transitIcon}</p>
+					<p><em>Activity Rating</em></p>
+					<p>${block.activityRating} / 10</p>
 				</li>
 			  `;
 	
@@ -145,15 +147,15 @@ document.getElementById('moneyFilter').onclick = () => {
 		data.forEach((block) => {
 		  if (block.requiresTransit === requiresTransit) {
 			// Add the block
+			let moneyIcon = block.costsMoney === 1 ? '✅' : '❌';
 			let listItem =
 			  `
 				<li>
-				  <p>${block.emoji}</p>
-				  <h3>${block.itemName}</h3>
-				  <p>Suitable if you're broke?</p>
-				  <p>${block.costsMoney}</p>
-				  <p><em>Activity Rating</em></p>
-				  <p>${block.activityRating} / 10</p>
+					<p class="emoji">${block.emoji}</p>
+					<h3>${block.itemName}</h3>
+					<p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
+					<p><em>Activity Rating</em></p>
+					<p>${block.activityRating} / 10</p>
 				</li>
 			  `;
 	
@@ -190,17 +192,17 @@ document.getElementById('productiveFilter').onclick = () => {
 		data.forEach((block) => {
 		  if (block.productive === productive) {
 			// Add the block
+			let moneyIcon = block.costsMoney === 1 ? '✅' : '❌';
+			let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
 			let listItem =
 			  `
 				<li>
-				  <p>${block.emoji}</p>
-				  <h3>${block.itemName}</h3>
-				  <p>Suitable if you're broke?</p>
-				  <p>${block.costsMoney}</p>
-				  <p><em>Do I have to leave the neighborhood?</em></p>
-				  <p>${block.requiresTransit}</p>
-				  <p><em>Activity Rating</em></p>
-				  <p>${block.activityRating} / 10</p>
+					<p class="emoji">${block.emoji}</p>
+					<h3>${block.itemName}</h3>
+					<p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
+					<p><em>Do I have to leave the neighborhood?</em> | ${transitIcon}</p>
+					<p><em>Activity Rating</em></p>
+					<p>${block.activityRating} / 10</p>
 				</li>
 			  `;
 	
@@ -220,16 +222,16 @@ document.getElementById('productiveFilter').onclick = () => {
     
             data.forEach((block) => {
                 // Add the block
-                let listItem =
+				let moneyIcon = block.costsMoney === 1 ? '✅' : '❌';
+				let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
+				let listItem =
                     `
                     <li>
-                        <p>${block.emoji}</p>
+						<p class="emoji">${block.emoji}</p>
                         <h3>${block.itemName}</h3>
-						<p>Suitable if you're broke?</p>
-						<p>${block.costsMoney}</p>
-                        <p><em>Do I have to leave the neighborhood?</em></p>
-                        <p>${block.requiresTransit}</p>
-                        <p><em>Activity Rating</em></p>
+						<p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
+						<p><em>Do I have to leave the neighborhood?</em> | ${transitIcon}</p>
+                        <p><em>Activity Rating</em>
                         <p>${block.activityRating} / 10</p>
                     </li>
                     `;
