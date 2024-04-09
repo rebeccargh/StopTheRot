@@ -246,6 +246,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	column-gap: calc(var(--gutter)*1.5);
+	padding-bottom: calc(var(--gutter)*1.5);
 }
 
 @media (min-width: 600px) {

@@ -29,7 +29,6 @@ const renderItems = (data) => {
 	})
 }
 
-
 // Fetch gets your (local) JSON file…
 fetch('assets/data.json')
 	.then(response => response.json())
@@ -37,16 +36,50 @@ fetch('assets/data.json')
 		// And passes the data to the function, above!
 		renderItems(data)
 	})
-	
-	// Slider output
+
 var slider = document.getElementById("activitySlider");
 var output = document.getElementById("sliderValue");
 output.innerHTML = slider.value; // Display the default slider value
 
-// Update the current slider value (each time you drag the slider handle) & display with 0 DP
-slider.oninput = function() {
-	output.innerHTML = (this.value/1).toFixed(0);
+// Function to fetch data and render blocks based on activityRating
+function fetchDataAndRenderBlocks(activityRating) {
+    fetch('assets/data.json') 
+        .then(response => response.json()) // Parse the response as JSON
+        .then(data => {
+            const container = document.getElementById('data-list');
+            container.innerHTML = ''; // Clear previous content
+        
+            data.forEach((block) => {
+                // Check if the activityRating matches the slider value
+                if (Math.round(block.activityRating) === parseInt(activityRating)) {
+                    // Add the block
+                    let listItem =
+                        `
+                        <li>
+                            <p>${block.emoji}</p>
+                            <h3>${block.itemName}</h3>
+                            <p><em>Do I have to leave the neighborhood?</em></p>
+                            <p>${block.requiresTransit}</p>
+                            <p><em>Activity Rating</em></p>
+                            <p>${block.activityRating} / 10</p>
+                        </li>
+                        `;
+        
+                    container.insertAdjacentHTML('beforeend', listItem);
+                }
+            });
+        });
 }
+
+// Update the current slider value  & display with 0 DP
+slider.oninput = function() {
+    output.innerHTML = (this.value/1).toFixed(0);
+    fetchDataAndRenderBlocks(this.value); // Call fetchDataAndRenderBlocks with the slider value
+};
+
+// Initially render blocks based on the default slider value
+renderAllBlocks(slider.value);
+
 
 // Filter button for free
 document.getElementById('moneyFilter').onclick = () => {
@@ -91,11 +124,6 @@ document.getElementById('moneyFilter').onclick = () => {
   }
   
   // Filter button for transit
-// document.getElementById('transitFilter').onclick = () => {
-// 	renderBlocks('1');
-// 	document.getElementById('transitFilter').classList.toggle('trains');
-//   };
-
   document.getElementById('transitFilter').onclick = () => {
     const transitFilter = document.getElementById('transitFilter');
     const needsTransit = transitFilter.classList.toggle('trains');
@@ -107,7 +135,6 @@ document.getElementById('moneyFilter').onclick = () => {
     }
 };
 
-  
   function renderTrainsBlocks(requiresTransit) {
 	fetch('assets/data.json')
 	  .then(response => response.json()) // Parse the response as JSON
@@ -137,7 +164,6 @@ document.getElementById('moneyFilter').onclick = () => {
 }
 
   // Filter button for produtivity
-
 document.getElementById('productiveFilter').onclick = () => {
 	renderBlocks('1');
 	document.getElementById('productiveFilter').classList.toggle('potato');
@@ -184,6 +210,7 @@ document.getElementById('productiveFilter').onclick = () => {
 	  })
   }
 
+//   Render ALL blocks to reset when filters are toggled off
   function renderAllBlocks() {
     fetch('assets/data.json') 
         .then(response => response.json()) // Parse the response as JSON
