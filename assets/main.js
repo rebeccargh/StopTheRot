@@ -10,8 +10,6 @@ const renderItems = (data) => {
 		// if (!item.alsoWasWriter) { // Conditional if this is `false` (“not true”)
 		// 	conditionalClass = 'faded' // Update the variable
 		// }
-
-		// Make a “template literal” as we have before, inserting your data (and maybe the class)
 		let listItem =
 			`
 				<li class="${conditionalClass}">
@@ -31,7 +29,6 @@ const renderItems = (data) => {
 	})
 }
 
-// 					// <img src="${item.posterImage}"> img tag goes below h3 if necessary
 
 // Fetch gets your (local) JSON file…
 fetch('assets/data.json')
@@ -51,15 +48,21 @@ slider.oninput = function() {
 	output.innerHTML = (this.value/1).toFixed(0);
 }
 
-
 // Filter button for free
-
 document.getElementById('moneyFilter').onclick = () => {
-	renderBlocks('0');
-	document.getElementById('moneyFilter').classList.toggle('free');
-  };
-  
-  function renderBlocks(costsMoney) {
+    const moneyFilter = document.getElementById('moneyFilter');
+    const isFree = moneyFilter.classList.toggle('free');
+    
+    if (!isFree) {
+        renderAllBlocks(); // Render all blocks when 'free' class is toggled off
+    } else {
+        renderFreeBlocks('0'); // Render only free blocks when 'free' class is toggled on
+    }
+};
+
+
+// Render blocks for free items
+  function renderFreeBlocks(costsMoney) {
 	fetch('assets/data.json') 
 	  .then(response => response.json()) // Parse the response as JSON
 	  .then(data => {
@@ -88,13 +91,24 @@ document.getElementById('moneyFilter').onclick = () => {
   }
   
   // Filter button for transit
+// document.getElementById('transitFilter').onclick = () => {
+// 	renderBlocks('1');
+// 	document.getElementById('transitFilter').classList.toggle('trains');
+//   };
 
-document.getElementById('transitFilter').onclick = () => {
-	renderBlocks('1');
-	document.getElementById('transitFilter').classList.toggle('trains');
-  };
+  document.getElementById('transitFilter').onclick = () => {
+    const transitFilter = document.getElementById('transitFilter');
+    const needsTransit = transitFilter.classList.toggle('trains');
+    
+    if (!needsTransit) {
+        renderAllBlocks(); // Render all blocks when 'trains' class is toggled off
+    } else {
+        renderTrainsBlocks('1'); // Render only free blocks when 'trains' class is toggled on
+    }
+};
+
   
-  function renderBlocks(requiresTransit) {
+  function renderTrainsBlocks(requiresTransit) {
 	fetch('assets/data.json')
 	  .then(response => response.json()) // Parse the response as JSON
 	  .then(data => {
@@ -128,8 +142,19 @@ document.getElementById('productiveFilter').onclick = () => {
 	renderBlocks('1');
 	document.getElementById('productiveFilter').classList.toggle('potato');
   };
+
+  document.getElementById('productiveFilter').onclick = () => {
+    const productiveFilter = document.getElementById('productiveFilter');
+    const productive = productiveFilter.classList.toggle('potato');
+    
+    if (!productive) {
+        renderAllBlocks(); // Render all blocks when 'trains' class is toggled off
+    } else {
+        renderProductiveBlocks('1'); // Render only free blocks when 'trains' class is toggled on
+    }
+};
   
-  function renderBlocks(productive) {
+  function renderProductiveBlocks(productive) {
 	fetch('assets/data.json')
 	  .then(response => response.json()) // Parse the response as JSON
 	  .then(data => {
@@ -158,3 +183,31 @@ document.getElementById('productiveFilter').onclick = () => {
 		});
 	  })
   }
+
+  function renderAllBlocks() {
+    fetch('assets/data.json') 
+        .then(response => response.json()) // Parse the response as JSON
+        .then(data => {
+            const container = document.getElementById('data-list');
+            container.innerHTML = ''; // Clear previous content
+    
+            data.forEach((block) => {
+                // Add the block
+                let listItem =
+                    `
+                    <li>
+                        <p>${block.emoji}</p>
+                        <h3>${block.itemName}</h3>
+						<p>Suitable if you're broke?</p>
+						<p>${block.costsMoney}</p>
+                        <p><em>Do I have to leave the neighborhood?</em></p>
+                        <p>${block.requiresTransit}</p>
+                        <p><em>Activity Rating</em></p>
+                        <p>${block.activityRating} / 10</p>
+                    </li>
+                    `;
+    
+                container.insertAdjacentHTML('beforeend', listItem);
+            });
+        })
+}
