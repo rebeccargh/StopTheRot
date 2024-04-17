@@ -240,3 +240,22 @@ document.getElementById('productiveFilter').onclick = () => {
             });
         })
 }
+
+// Function to close the lightbox
+function closeLightbox() {
+    document.getElementById('overlay').style.display = 'none';
+}
+
+// Function to open the lightbox
+function openLightbox() {
+    document.getElementById('overlay').style.display = 'block';
+}
+
+// Bind click event to close button
+document.getElementById('closeButton').addEventListener('click', closeLightbox);
+document.getElementById('okay').addEventListener('click', closeLightbox);
+
+// Open the lightbox when the page loads
+window.onload = function() {
+    openLightbox();
+};
