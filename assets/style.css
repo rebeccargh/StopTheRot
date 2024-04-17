@@ -327,7 +327,7 @@ li:hover {
 
 #topButton {
 	text-align: center;
-	font-family: "Sono";
+	font-family: monospace;
 	color: var(--background-color);
 	position: fixed;
 	right: 40;
