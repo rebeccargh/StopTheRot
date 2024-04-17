@@ -118,6 +118,10 @@ h1 {
 	font-family: "Sono";
 	font-weight: 500;
 }
+.activities {
+	margin-left: 10vw;
+	margin-right: 10vw;
+}
 h2 {
 	font-size: calc(var(--font-size)*1.618);
 	/* font-family: "Open Sans"; */
@@ -263,6 +267,10 @@ footer p:nth-of-type(3) {
 	position: fixed;
 	top: calc(var(--gutter)*1.2);
 	right: calc(var(--gutter)*1.2);
+}
+#home {
+	padding-left: calc(var(--gutter)*0.75);
+	padding-right: calc(var(--gutter)*0.75);
 }
 
 .slider {
