@@ -1,32 +1,33 @@
 // Function to render your items
 const renderItems = (data) => {
-	// The `ul` where the items will be inserted
-	const dataList = document.getElementById('data-list')
+    // The `ul` where the items will be inserted
+    const dataList = document.getElementById('data-list')
 
-	// Loop through each item in the data array
-	data.forEach((item) => {
-		let conditionalClass = '' // Set an empty class variable
+    // Loop through each item in the data array
+    data.forEach((item) => {
+        let conditionalClass = '' // Set an empty class variable
 
-		// if (!item.alsoWasWriter) { // Conditional if this is `false` (“not true”)
-		// 	conditionalClass = 'faded' // Update the variable
-		// }
-		let moneyIcon = item.costsMoney === 1 ? '✅' : '❌';
-		let transitIcon = item.requiresTransit === 1 ? '✅' : '❌';
-		let listItem =
-			`
-				<li class="${conditionalClass}">
-					<p class="emoji">${item.emoji}</p>
-					<h3>${item.itemName}</h3>
-					<p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
-					<p><em>Do I have to leave the neighborhood?</em> | ${transitIcon}</p>
-					<p><em>Activity Rating</em></p>
-						<p>${item.activityRating} / 10</p>
-					</a>
-				</li>
-			`
+        // Log the values of item.costsMoney and item.requiresTransit
+        console.log('costsMoney:', item.costsMoney);
+        console.log('requiresTransit:', item.requiresTransit);
 
-		dataList.insertAdjacentHTML('beforeend', listItem) // Add it to the `ul`!
-	})
+        let moneyIcon = item.costsMoney === 1 ? '❌' : '✅';
+        let transitIcon = item.requiresTransit === 1 ? '✅' : '❌';
+        let listItem =
+            `
+            <li class="${conditionalClass}">
+                <p class="emoji">${item.emoji}</p>
+                <h3>${item.itemName}</h3>
+                <p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
+                <p><em>Do I have to leave the neighborhood?</em> | ${transitIcon}</p>
+                <p><em>Activity Rating</em></p>
+                    <p>${item.activityRating} / 10</p>
+                </a>
+            </li>
+            `
+
+        dataList.insertAdjacentHTML('beforeend', listItem) // Add it to the `ul`!
+    })
 }
 
 // Fetch gets your (local) JSON file…
@@ -53,7 +54,7 @@ function fetchDataAndRenderBlocks(activityRating) {
                 // Check if the activityRating matches the slider value
                 if (Math.round(block.activityRating) === parseInt(activityRating)) {
                     // Add the block
-					let moneyIcon = block.costsMoney === 1 ? '✅' : '❌';
+					let moneyIcon = block.costsMoney === 1 ? '❌' : '✅';
 					let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
 					let listItem =
                         `
@@ -105,7 +106,7 @@ document.getElementById('moneyFilter').onclick = () => {
 		container.innerHTML = ''; // Clear previous content
 	
 		data.forEach((block) => {
-		  if (block.costsMoney === costsMoney) {
+			if (parseInt(block.costsMoney) === parseInt(costsMoney)) {
 			// Add the block
 			let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
 			let listItem =
@@ -145,9 +146,9 @@ document.getElementById('moneyFilter').onclick = () => {
 		container.innerHTML = ''; // Clear previous content
 	
 		data.forEach((block) => {
-		  if (block.requiresTransit === requiresTransit) {
+			if (parseInt(block.requiresTransit) === parseInt(requiresTransit)) {
 			// Add the block
-			let moneyIcon = block.costsMoney === 1 ? '✅' : '❌';
+			let moneyIcon = block.costsMoney === 1 ? '❌' : '✅';
 			let listItem =
 			  `
 				<li>
@@ -190,9 +191,9 @@ document.getElementById('productiveFilter').onclick = () => {
 		container.innerHTML = ''; // Clear previous content
 	
 		data.forEach((block) => {
-		  if (block.productive === productive) {
+			if (parseInt(block.productive) === parseInt(productive)) {
 			// Add the block
-			let moneyIcon = block.costsMoney === 1 ? '✅' : '❌';
+			let moneyIcon = block.costsMoney === 1 ? '❌' : '✅';
 			let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
 			let listItem =
 			  `
@@ -222,7 +223,7 @@ document.getElementById('productiveFilter').onclick = () => {
     
             data.forEach((block) => {
                 // Add the block
-				let moneyIcon = block.costsMoney === 1 ? '✅' : '❌';
+				let moneyIcon = block.costsMoney === 1 ? '❌' : '✅';
 				let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
 				let listItem =
                     `
