@@ -1,130 +1,130 @@
 [
     {
-        "itemName": "Clear one movie off your to watch list on Netflix. But on the couch.",
+        "itemName": "Clear one movie off your to watch list on Netflix. But on the couch.",
         "emoji": "🎬",
-        "activityRating": "1",
-        "costsMoney": "0",
-        "requiresTransit": "0",
-        "productive": "0"
+        "activityRating": 1,
+        "costsMoney": 0,
+        "requiresTransit": 0,
+        "productive": 0
     },
     {
-        "itemName": "Continue (or frog) a crochet project that’s been sat for weeks unfinished",
+        "itemName": "Continue (or frog) a crochet project that’s been sat for weeks unfinished",
         "emoji": "🧶",
-        "activityRating": "2",
-        "costsMoney": "0",
-        "requiresTransit": "0",
-        "productive": "0"
+        "activityRating": 2,
+        "costsMoney": 0,
+        "requiresTransit": 0,
+        "productive": 0
     },
     {
         "itemName": "Journal!",
         "emoji": "✍️",
-        "activityRating": "1",
-        "costsMoney": "0",
-        "requiresTransit": "0",
-        "productive": "1"
+        "activityRating": 1,
+        "costsMoney": 0,
+        "requiresTransit": 0,
+        "productive": 1
     },
     {
-        "itemName": "Find a book recommendation and check it out from Libby",
+        "itemName": "Find a book recommendation and check it out from Libby",
         "emoji": "📚",
-        "activityRating": "1",
-        "costsMoney": "0",
-        "requiresTransit": "0",
-        "productive": "1"
+        "activityRating": 1,
+        "costsMoney": 0,
+        "requiresTransit": 0,
+        "productive": 1
     },
     {
-        "itemName": "Take a walk to grab a cup of coffee/boba",
+        "itemName": "Take a walk to grab a cup of coffee/boba",
         "emoji": "🧋",
-        "activityRating": "2",
-        "costsMoney": "1",
-        "requiresTransit": "0",
-        "productive": "0"
+        "activityRating": 2,
+        "costsMoney": 1,
+        "requiresTransit": 0,
+        "productive": 0
     },
     {
-        "itemName": "Take a walk in Central Park",
+        "itemName": "Take a walk in Central Park",
         "emoji": "🌸",
-        "activityRating": "4",
-        "costsMoney": "0",
-        "requiresTransit": "0",
-        "productive": "0"
+        "activityRating": 4,
+        "costsMoney": 0,
+        "requiresTransit": 0,
+        "productive": 0
     },
     {
-        "itemName": "Go to the Met",
+        "itemName": "Go to the Met",
         "emoji": "🖼️",
-        "activityRating": "5",
-        "costsMoney": "0",
-        "requiresTransit": "0",
-        "productive": "0"
+        "activityRating": 5,
+        "costsMoney": 0,
+        "requiresTransit": 0,
+        "productive": 0
     },
     {
-        "itemName": "Pick a coffee shop from your saved locations & visit it in Manhattan",
+        "itemName": "Pick a coffee shop from your saved locations & visit it in Manhattan",
         "emoji": "🏙️",
-        "activityRating": "4",
-        "costsMoney": "1",
-        "requiresTransit": "1",
-        "productive": "0"
+        "activityRating": 4,
+        "costsMoney": 1,
+        "requiresTransit": 1,
+        "productive": 0
     },
     {
-        "itemName": "Pick a coffee shop from saved locations OUTSIDE of Manhattan",
+        "itemName": "Pick a coffee shop from saved locations OUTSIDE of Manhattan",
         "emoji": "🛤️",
-        "activityRating": "7",
-        "costsMoney": "1",
-        "requiresTransit": "1",
-        "productive": "0"
+        "activityRating": 7,
+        "costsMoney": 1,
+        "requiresTransit": 1,
+        "productive": 0
     },
     {
-        "itemName": "Go skating",
+        "itemName": "Go skating",
         "emoji": "⛸️",
-        "activityRating": "10",
-        "costsMoney": "1",
-        "requiresTransit": "1",
-        "productive": "1"
+        "activityRating": 10,
+        "costsMoney": 1,
+        "requiresTransit": 1,
+        "productive": 1
     },
     {
-        "itemName": "Check out Time Out’s weekly things to do article and NYCForFree on Insta - find something to do!",
+        "itemName": "Check out Time Out’s weekly things to do article and NYCForFree on Insta - find something to do!",
         "emoji": "📖",
-        "activityRating": "8",
-        "costsMoney": "0",
-        "requiresTransit": "1",
-        "productive": "0"
+        "activityRating": 8,
+        "costsMoney": 0,
+        "requiresTransit": 1,
+        "productive": 0
     },
     {
-        "itemName": "Take a bag of donations to Goodwill, reward yourself with a snack or a coffee on your way home",
+        "itemName": "Take a bag of donations to Goodwill, reward yourself with a snack or a coffee on your way home",
         "emoji": "👜",
-        "activityRating": "7",
-        "costsMoney": "1",
-        "requiresTransit": "0",
-        "productive": "1"
+        "activityRating": 7,
+        "costsMoney": 1,
+        "requiresTransit": 0,
+        "productive": 1
     },
     {
-        "itemName": "Pick one drawer/box/shelf and clean, toss & reorganize",
+        "itemName": "Pick one drawer/box/shelf and clean, toss & reorganize",
         "emoji": "🗑️",
-        "activityRating": "5",
-        "costsMoney": "0",
-        "requiresTransit": "0",
-        "productive": "1"
+        "activityRating": 5,
+        "costsMoney": 0,
+        "requiresTransit": 0,
+        "productive": 1
     },
     {
-        "itemName": "Pick an entire storage space (wardrobe, dresser, unit) and clean, toss & reorganize",
+        "itemName": "Pick an entire storage space (wardrobe, dresser, unit) and clean, toss & reorganize",
         "emoji": "📦",
-        "activityRating": "8",
-        "costsMoney": "0",
-        "requiresTransit": "0",
-        "productive": "1"
+        "activityRating": 8,
+        "costsMoney": 0,
+        "requiresTransit": 0,
+        "productive": 1
     },
     {
         "itemName": "Laundry.",
         "emoji": "🧺",
-        "activityRating": "7",
-        "costsMoney": "1",
-        "requiresTransit": "0",
-        "productive": "1"
+        "activityRating": 7,
+        "costsMoney": 1,
+        "requiresTransit": 0,
+        "productive": 1
     },
     {
-        "itemName": "Digital detox - clear out duplicate photos & screenshots",
+        "itemName": "Digital detox - clear out duplicate photos & screenshots",
         "emoji": "📱",
-        "activityRating": "3",
-        "costsMoney": "0",
-        "requiresTransit": "0",
-        "productive": "1"
+        "activityRating": 3,
+        "costsMoney": 0,
+        "requiresTransit": 0,
+        "productive": 1
     }
 ]
