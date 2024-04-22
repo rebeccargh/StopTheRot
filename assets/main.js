@@ -242,6 +242,14 @@ document.getElementById('productiveFilter').onclick = () => {
         })
 }
 
+document.getElementById('menu').querySelector('.nav').addEventListener('click', function() {
+	event.preventDefault();
+    renderAllBlocks(); // Render all items
+    document.getElementById('moneyFilter').classList.remove('free'); // Remove .free class
+    document.getElementById('transitFilter').classList.remove('trains'); // Remove .trains class
+    document.getElementById('productiveFilter').classList.remove('potato'); // Remove .potato class
+});
+
 // Function to close the lightbox
 function closeLightbox() {
     document.getElementById('overlay').style.display = 'none';
