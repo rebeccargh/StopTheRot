@@ -60,7 +60,6 @@ em {
 	font-size: calc(var(--font-size)*0.9);
 	background-color: var(--background-color);
 	border: solid 3px var(--color);
-	border-radius: var(--font-size);
 	text-align: center;
 }
 
@@ -84,7 +83,6 @@ header {
 	text-align: center;
 	background-color: var(--background-color);
 	border: solid 3px var(--color);
-	border-radius: var(--font-size);
 }
 
 #filterBox p {
@@ -142,7 +140,6 @@ p {
 	padding-bottom: calc(var(--gutter)*0.3);
 	font-family: "Sono";
 	border: solid 3px var(--secondary);
-	border-radius: calc(var(--gutter)*0.5);
 	color: var(--background-color);
 	background-color: var(--secondary-color);
 }
@@ -162,7 +159,8 @@ button {
 
 button, #allOptions {
 	border: solid 3px var(--color);
-	border-radius: calc(var(--gutter)*0.5);
+	background-color: #c3c3c3;
+	box-shadow: inset 2px 2px 0px 0px #ffffff;
 	padding-top: calc(var(--gutter)*0.3);
 	padding-bottom: calc(var(--gutter)*0.3);
 	padding-left: calc(var(--gutter)*0.5);
@@ -171,16 +169,13 @@ button, #allOptions {
 	cursor: pointer;
 }
 
-button:active, #allOptions:active {
-	box-shadow: 4px 4px 4px 2px #b6b6b6;
-}
-
-button:hover, #allOptions:hover, .nav:hover {
+button:hover, #allOptions:hover, .nav:hover, #allOptions:active, #scrollPrompt:hover {
 	color: var(--background-color);
 	background: var(--secondary-color);
 	border-color: var(--secondary-color);
 	font-weight: 500;
-	transition: 0.2s
+	transition: 0.2s;
+	box-shadow: 4px 4px 0px 0px #000000;
 }
 
 .free, .trains, .potato {
@@ -220,21 +215,20 @@ button:hover, #allOptions:hover, .nav:hover {
 	scroll-behavior: smooth;
 	position: relative;
 	margin: auto;
-	padding-top: calc(var(--gutter)*2);
-	padding-bottom: calc(var(--gutter)*1.2);
+	margin-top: calc(var(--gutter)*2);
+	margin-bottom: calc(var(--gutter)*1.2);
   }
 
 li {
 	color: var(--color);
 	transition: 0.5s;
 	border: solid 3px var(--color);
-	border-radius: calc(var(--gutter)*0.5);
 	padding-top: calc(var(--gutter)*1);
 	padding-bottom: calc(var(--gutter)*1);
 	padding-left: calc(var(--gutter)*1.2);
 	padding-right: calc(var(--gutter)*1.2);
 	align-content: center;
-	box-shadow: 4px 4px 6px 2px #cfcfcf;
+	box-shadow: 4px 4px 0px 0px #000000;
 }
 
 
@@ -257,7 +251,6 @@ footer {
 	font-family: "Sono";
 	background-color: var(--background-color);
 	border: solid 3px var(--color);
-	border-radius: var(--font-size);
 	padding: calc(var(--gutter)*0.75);
 }
 
@@ -464,8 +457,10 @@ footer p:nth-of-type(3) {
 		column-gap: calc(var(--gutter)*0.5);
 	}
 	#scrollPrompt {
-		padding-top: calc(var(--gutter)*2);
-		padding-bottom: calc(var(--gutter)*1.5);
+		margin-top: calc(var(--gutter)*1.7);
+		margin-bottom: calc(var(--gutter)*1.5);
+		padding-top: calc(var(--gutter)*0.4);
+		padding-bottom: calc(var(--gutter)*0.4);
 	}
 	#data-list {
 		display: grid;
