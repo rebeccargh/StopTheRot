@@ -33,6 +33,11 @@ em {
 	font-style: italic;
 }
 
+#smallDevice {
+	display: none;
+	margin: calc(var(--gutter)*2);
+}
+
 #menu, #home{
 	position: sticky;
 	display: flex;
@@ -62,6 +67,8 @@ em {
 header {
 	margin-bottom: calc(var(--gutter)*1.25);
 	text-align: center;
+	padding-left: calc(var(--gutter)*0.75);
+	padding-right: calc(var(--gutter)*0.75);
 }
 
 #filterBox {
@@ -87,6 +94,7 @@ header {
 	padding-top: calc(var(--gutter)*0.75);
 	font-family: "Lato";
 	line-height: 1.9rem;
+	font-size: calc(var(--gutter)*0.7);
 }
 
 h1 {
@@ -99,7 +107,7 @@ h1 {
 	margin-bottom: calc(var(--gutter)*1.25);
 }
 h2 {
-	font-size: calc(var(--font-size)*1.618);
+	font-size: calc(var(--font-size)*1.4);
 	font-weight: 300;
 	font-family: "Lato";
 	margin-top: var(--gutter);
@@ -356,11 +364,13 @@ footer p:nth-of-type(3) {
 	font-size: calc(var(--font-size)*1.5);
 	font-weight: 600;
 	padding-top: calc(var(--gutter)*1);
+	margin: 0;
 }
 #lightPara {
 	padding-bottom: calc(var(--gutter)*3);
-	padding-top: calc(var(--gutter)*0.75);
+	padding-top: calc(var(--gutter)*0.5);
 	font-size: calc(var(--font-size)*0.8);
+	line-height: 1.5rem;
 }
 
 #okay {
@@ -370,8 +380,8 @@ footer p:nth-of-type(3) {
 	border: 2px solid;
 	border-color: var(--color);
 	background-color: #c3c3c3;
-	padding-top: calc(var(--gutter)*0.25);
-	padding-bottom: calc(var(--gutter)*0.25);
+	padding-top: calc(var(--gutter)*0.1);
+	padding-bottom: calc(var(--gutter)*0.1);
 	padding-left: calc(var(--gutter)*0.4);
 	padding-right: calc(var(--gutter)*0.4);
 	font-family: "sono";
@@ -401,6 +411,15 @@ footer p:nth-of-type(3) {
 	background-color: var(--secondary-color);
 }
 
+@media (max-width: 350px) {
+	#content {
+		display: none;
+	}
+	#smallDevice {
+		display: block;
+	}
+}
+
 @media (min-width: 600px) {
 	body {
 		margin: auto;
@@ -418,6 +437,15 @@ footer p:nth-of-type(3) {
 	#closeButton {
 		padding-left: 8px;
 		padding-right: 8px;
+	}
+	#lightPara {
+	line-height: 1.9rem;
+	}
+	#okay {
+		padding-top: calc(var(--gutter)*0.25);
+		padding-bottom: calc(var(--gutter)*0.25);
+		padding-left: calc(var(--gutter)*0.4);
+		padding-right: calc(var(--gutter)*0.4);
 	}
 	#topBar {
 		height: 30px;
