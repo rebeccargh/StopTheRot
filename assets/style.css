@@ -59,6 +59,7 @@ h3 {
 	font-size: calc(var(--font-size)*1.25);
 	font-weight: 500;
 	padding-bottom: calc(var(--gutter)*0.5);
+	padding-top: calc(var(--gutter)*1.25);
 }
 
 p {
@@ -66,14 +67,14 @@ p {
 }
 
 li {
+	position: relative;
 	color: var(--color);
 	transition: 0.5s;
 	border: solid 3px var(--color);
-	padding-top: calc(var(--gutter)*1);
 	padding-bottom: calc(var(--gutter)*1);
 	padding-left: calc(var(--gutter)*1.2);
 	padding-right: calc(var(--gutter)*1.2);
-	align-content: center;
+	/* align-content: center; */
 	box-shadow: 4px 4px 0px 0px #000000;
 }
 
@@ -86,6 +87,17 @@ li:hover {
 
 .emoji {
 	font-size: calc(var(--font-size)*2);
+	position: absolute;
+    top: -1px;
+	right: -1px;
+	width: 55px;
+    cursor: pointer;
+	border: 2px solid black;
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	background-color: #c3c3c3;
 }
 
 /* Nav bar */
@@ -405,16 +417,26 @@ footer p:nth-of-type(3) {
 	padding-bottom: 2px;
 	background-color: #c3c3c3;
 }
-
-#topBar {
+ .topBarLanding, .topBarItem {
 	position: relative;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 27px;
 	border-bottom: 2px solid darkblue;
 	background-color: var(--secondary-color);
 }
+
+.topBarLanding {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 3.2vh;
+}
+
+.topBarItem {
+	top: 0;
+	left: -32;
+	width: 113.2%;
+	height: 4.5vh;
+}
+
 
 /* Responsive media queries */
 @media (max-width: 350px) {

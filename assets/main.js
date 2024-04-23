@@ -12,6 +12,7 @@ const renderItems = (data) => {
         let listItem =
             `
             <li class="${conditionalClass}">
+				<div class="topBarItem"></div>
                 <p class="emoji">${item.emoji}</p>
                 <h3>${item.itemName}</h3>
                 <p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
@@ -54,6 +55,7 @@ function fetchDataAndRenderBlocks(activityRating) {
 					let listItem =
                         `
                         <li>
+							<div class="topBarItem"></div>
 							<p class="emoji">${block.emoji}</p>
 							<h3>${block.itemName}</h3>
 							<p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
@@ -103,6 +105,7 @@ document.getElementById('moneyFilter').onclick = () => {
 			let listItem =
 			  `
 				<li>
+					<div class="topBarItem"></div>
 					<p class="emoji">${block.emoji}</p>
 					<h3>${block.itemName}</h3>
 					<p><em>Do I have to leave the neighborhood?</em> | ${transitIcon}</p>
@@ -142,6 +145,7 @@ document.getElementById('moneyFilter').onclick = () => {
 			let listItem =
 			  `
 				<li>
+					<div class="topBarItem"></div>
 					<p class="emoji">${block.emoji}</p>
 					<h3>${block.itemName}</h3>
 					<p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
@@ -187,6 +191,7 @@ document.getElementById('productiveFilter').onclick = () => {
 			let listItem =
 			  `
 				<li>
+					<div class="topBarItem"></div>
 					<p class="emoji">${block.emoji}</p>
 					<h3>${block.itemName}</h3>
 					<p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
@@ -216,6 +221,7 @@ document.getElementById('productiveFilter').onclick = () => {
 				let listItem =
                     `
                     <li>
+						<div class="topBarItem"></div>
 						<p class="emoji">${block.emoji}</p>
                         <h3>${block.itemName}</h3>
 						<p><em>Suitable if you're broke?</em> | ${moneyIcon}</p>
