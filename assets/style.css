@@ -285,7 +285,7 @@ button, #allOptions {
 	cursor: pointer;
 }
 
-button:hover, #allOptions:hover, .nav:hover, #allOptions:active, #scrollPrompt:hover {
+button:hover, #allOptions:hover, .nav:hover,  #scrollPrompt:hover, button:focus, #allOptions:focus, .nav:focus, #scrollPrompt:focus {
 	color: var(--background-color);
 	background: var(--secondary-color);
 	border-color: var(--secondary-color);
@@ -293,6 +293,8 @@ button:hover, #allOptions:hover, .nav:hover, #allOptions:active, #scrollPrompt:h
 	transition: 0.2s;
 	box-shadow: 4px 4px 0px 0px #000000;
 }
+/* #allOptions:active, */
+
 
 /* Footer */
 footer {
