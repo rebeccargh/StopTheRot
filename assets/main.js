@@ -75,10 +75,6 @@ slider.oninput = function() {
     fetchDataAndRenderBlocks(this.value) // Render based on slider value
 }
 
-// Initially render blocks based on the default slider value
-renderAllBlocks(slider.value)
-
-
 // Free filter
 document.getElementById('moneyFilter').onclick = () => {
     const moneyFilter = document.getElementById('moneyFilter')
