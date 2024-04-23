@@ -1,18 +1,14 @@
-// Function to render your items
+// Render items
 const renderItems = (data) => {
-    // The `ul` where the items will be inserted
+    // The <ul> target
     const dataList = document.getElementById('data-list')
 
-    // Loop through each item in the data array
+    // Loop each item
     data.forEach((item) => {
-        let conditionalClass = '' // Set an empty class variable
+        let conditionalClass = '' // Set an empty class variable - necessary?
 
-        // Log the values of item.costsMoney and item.requiresTransit
-        console.log('costsMoney:', item.costsMoney);
-        console.log('requiresTransit:', item.requiresTransit);
-
-        let moneyIcon = item.costsMoney === 1 ? '❌' : '✅';
-        let transitIcon = item.requiresTransit === 1 ? '✅' : '❌';
+        let moneyIcon = item.costsMoney === 1 ? '❌' : '✅'
+        let transitIcon = item.requiresTransit === 1 ? '✅' : '❌'
         let listItem =
             `
             <li class="${conditionalClass}">
@@ -26,36 +22,35 @@ const renderItems = (data) => {
             </li>
             `
 
-        dataList.insertAdjacentHTML('beforeend', listItem) // Add it to the `ul`!
+        dataList.insertAdjacentHTML('beforeend', listItem) // Insert as <li>
     })
 }
 
-// Fetch gets your (local) JSON file…
+// Fetch database JSON
 fetch('assets/data.json')
 	.then(response => response.json())
 	.then(data => {
-		// And passes the data to the function, above!
+		// Passes to above format
 		renderItems(data)
 	})
 
-var slider = document.getElementById("activitySlider");
-var output = document.getElementById("sliderValue");
-output.innerHTML = slider.value; // Display the default slider value
+var slider = document.getElementById("activitySlider")
+var output = document.getElementById("sliderValue")
+output.innerHTML = slider.value // Default output value
 
-// Function to fetch data and render blocks based on activityRating
+// Fetch & render blocks based on activityRating
 function fetchDataAndRenderBlocks(activityRating) {
     fetch('assets/data.json') 
-        .then(response => response.json()) // Parse the response as JSON
+        .then(response => response.json())
         .then(data => {
-            const container = document.getElementById('data-list');
-            container.innerHTML = ''; // Clear previous content
+            const container = document.getElementById('data-list')
+            container.innerHTML = '' // Clear previous content
         
             data.forEach((block) => {
-                // Check if the activityRating matches the slider value
+                // Check if activityRating matches slider value
                 if (Math.round(block.activityRating) === parseInt(activityRating)) {
-                    // Add the block
-					let moneyIcon = block.costsMoney === 1 ? '❌' : '✅';
-					let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
+					let moneyIcon = block.costsMoney === 1 ? '❌' : '✅'
+					let transitIcon = block.requiresTransit === 1 ? '✅' : '❌'
 					let listItem =
                         `
                         <li>
@@ -66,49 +61,49 @@ function fetchDataAndRenderBlocks(activityRating) {
                             <p><em>Activity Rating</em></p>
                             <p>${block.activityRating} / 10</p>
                         </li>
-                        `;
+                        `
         
-                    container.insertAdjacentHTML('beforeend', listItem);
+                    container.insertAdjacentHTML('beforeend', listItem)
                 }
-            });
-        });
+            })
+        })
 }
 
-// Update the current slider value  & display with 0 DP
+// Update the current slider value & display with 0 DP
 slider.oninput = function() {
-    output.innerHTML = (this.value/1).toFixed(0);
-    fetchDataAndRenderBlocks(this.value); // Call fetchDataAndRenderBlocks with the slider value
-};
+    output.innerHTML = (this.value/1).toFixed(0)
+    fetchDataAndRenderBlocks(this.value) // Render based on slider value
+}
 
 // Initially render blocks based on the default slider value
-renderAllBlocks(slider.value);
+renderAllBlocks(slider.value)
 
 
-// Filter button for free
+// Free filter
 document.getElementById('moneyFilter').onclick = () => {
-    const moneyFilter = document.getElementById('moneyFilter');
-    const isFree = moneyFilter.classList.toggle('free');
+    const moneyFilter = document.getElementById('moneyFilter')
+    const isFree = moneyFilter.classList.toggle('free')
     
     if (!isFree) {
-        renderAllBlocks(); // Render all blocks when 'free' class is toggled off
+        renderAllBlocks() // Render all with free off
     } else {
-        renderFreeBlocks('0'); // Render only free blocks when 'free' class is toggled on
+        renderFreeBlocks('0') // Render only free
     }
-};
+}
 
 
-// Render blocks for free items
+// Render blocks for free
   function renderFreeBlocks(costsMoney) {
 	fetch('assets/data.json') 
-	  .then(response => response.json()) // Parse the response as JSON
+	  .then(response => response.json())
 	  .then(data => {
-		const container = document.getElementById('data-list');
-		container.innerHTML = ''; // Clear previous content
+		const container = document.getElementById('data-list')
+		container.innerHTML = ''
 	
 		data.forEach((block) => {
 			if (parseInt(block.costsMoney) === parseInt(costsMoney)) {
-			// Add the block
-			let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
+
+			let transitIcon = block.requiresTransit === 1 ? '✅' : '❌'
 			let listItem =
 			  `
 				<li>
@@ -118,37 +113,36 @@ document.getElementById('moneyFilter').onclick = () => {
 					<p><em>Activity Rating</em></p>
 					<p>${block.activityRating} / 10</p>
 				</li>
-			  `;
+			  `
 	
-			container.insertAdjacentHTML('beforeend', listItem);
+			container.insertAdjacentHTML('beforeend', listItem)
 		  }
-		});
+		})
 	  })
   }
   
-  // Filter button for transit
+  // Transit filter
   document.getElementById('transitFilter').onclick = () => {
-    const transitFilter = document.getElementById('transitFilter');
-    const needsTransit = transitFilter.classList.toggle('trains');
+    const transitFilter = document.getElementById('transitFilter')
+    const needsTransit = transitFilter.classList.toggle('trains')
     
     if (!needsTransit) {
-        renderAllBlocks(); // Render all blocks when 'trains' class is toggled off
+        renderAllBlocks() // Render all with transit off
     } else {
-        renderTrainsBlocks('1'); // Render only free blocks when 'trains' class is toggled on
+        renderTrainsBlocks('1') // Render only transit
     }
-};
+}
 
   function renderTrainsBlocks(requiresTransit) {
 	fetch('assets/data.json')
-	  .then(response => response.json()) // Parse the response as JSON
+	  .then(response => response.json())
 	  .then(data => {
-		const container = document.getElementById('data-list');
-		container.innerHTML = ''; // Clear previous content
+		const container = document.getElementById('data-list')
+		container.innerHTML = ''
 	
 		data.forEach((block) => {
 			if (parseInt(block.requiresTransit) === parseInt(requiresTransit)) {
-			// Add the block
-			let moneyIcon = block.costsMoney === 1 ? '❌' : '✅';
+			let moneyIcon = block.costsMoney === 1 ? '❌' : '✅'
 			let listItem =
 			  `
 				<li>
@@ -158,43 +152,42 @@ document.getElementById('moneyFilter').onclick = () => {
 					<p><em>Activity Rating</em></p>
 					<p>${block.activityRating} / 10</p>
 				</li>
-			  `;
+			  `
 	
-			container.insertAdjacentHTML('beforeend', listItem);
+			container.insertAdjacentHTML('beforeend', listItem)
 		  }
-		});
-  });
+		})
+  })
 }
 
-  // Filter button for produtivity
+  // Productivity filter
 document.getElementById('productiveFilter').onclick = () => {
-	renderBlocks('1');
-	document.getElementById('productiveFilter').classList.toggle('potato');
-  };
+	renderBlocks('1')
+	document.getElementById('productiveFilter').classList.toggle('potato')
+  }
 
   document.getElementById('productiveFilter').onclick = () => {
-    const productiveFilter = document.getElementById('productiveFilter');
-    const productive = productiveFilter.classList.toggle('potato');
+    const productiveFilter = document.getElementById('productiveFilter')
+    const productive = productiveFilter.classList.toggle('potato')
     
     if (!productive) {
-        renderAllBlocks(); // Render all blocks when 'trains' class is toggled off
+        renderAllBlocks() // Render all with potato off
     } else {
-        renderProductiveBlocks('1'); // Render only free blocks when 'trains' class is toggled on
+        renderProductiveBlocks('1') // Render only potato
     }
-};
+}
   
   function renderProductiveBlocks(productive) {
 	fetch('assets/data.json')
-	  .then(response => response.json()) // Parse the response as JSON
+	  .then(response => response.json())
 	  .then(data => {
-		const container = document.getElementById('data-list');
-		container.innerHTML = ''; // Clear previous content
+		const container = document.getElementById('data-list')
+		container.innerHTML = ''
 	
 		data.forEach((block) => {
 			if (parseInt(block.productive) === parseInt(productive)) {
-			// Add the block
-			let moneyIcon = block.costsMoney === 1 ? '❌' : '✅';
-			let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
+			let moneyIcon = block.costsMoney === 1 ? '❌' : '✅'
+			let transitIcon = block.requiresTransit === 1 ? '✅' : '❌'
 			let listItem =
 			  `
 				<li>
@@ -205,26 +198,25 @@ document.getElementById('productiveFilter').onclick = () => {
 					<p><em>Activity Rating</em></p>
 					<p>${block.activityRating} / 10</p>
 				</li>
-			  `;
+			  `
 	
-			container.insertAdjacentHTML('beforeend', listItem);
+			container.insertAdjacentHTML('beforeend', listItem)
 		  }
-		});
+		})
 	  })
   }
 
-//   Render ALL blocks to reset when filters are toggled off
+//   Render ALL blocks to reset on filters off
   function renderAllBlocks() {
     fetch('assets/data.json') 
-        .then(response => response.json()) // Parse the response as JSON
+        .then(response => response.json())
         .then(data => {
-            const container = document.getElementById('data-list');
-            container.innerHTML = ''; // Clear previous content
+            const container = document.getElementById('data-list')
+            container.innerHTML = ''
     
             data.forEach((block) => {
-                // Add the block
-				let moneyIcon = block.costsMoney === 1 ? '❌' : '✅';
-				let transitIcon = block.requiresTransit === 1 ? '✅' : '❌';
+				let moneyIcon = block.costsMoney === 1 ? '❌' : '✅'
+				let transitIcon = block.requiresTransit === 1 ? '✅' : '❌'
 				let listItem =
                     `
                     <li>
@@ -235,36 +227,32 @@ document.getElementById('productiveFilter').onclick = () => {
                         <p><em>Activity Rating</em>
                         <p>${block.activityRating} / 10</p>
                     </li>
-                    `;
+                    `
     
-                container.insertAdjacentHTML('beforeend', listItem);
-            });
+                container.insertAdjacentHTML('beforeend', listItem)
+            })
         })
 }
 
 document.getElementById('menu').querySelector('.nav').addEventListener('click', function() {
-	event.preventDefault();
-    renderAllBlocks(); // Render all items
-    document.getElementById('moneyFilter').classList.remove('free'); // Remove .free class
-    document.getElementById('transitFilter').classList.remove('trains'); // Remove .trains class
-    document.getElementById('productiveFilter').classList.remove('potato'); // Remove .potato class
-});
+	event.preventDefault()
+    renderAllBlocks()
+    document.getElementById('moneyFilter').classList.remove('free')
+    document.getElementById('transitFilter').classList.remove('trains')
+    document.getElementById('productiveFilter').classList.remove('potato')
+})
 
-// Function to close the lightbox
-function closeLightbox() {
-    document.getElementById('overlay').style.display = 'none';
-}
-
-// Function to open the lightbox
-function openLightbox() {
-    document.getElementById('overlay').style.display = 'block';
-}
-
-// Bind click event to close button
-document.getElementById('closeButton').addEventListener('click', closeLightbox);
-document.getElementById('okay').addEventListener('click', closeLightbox);
-
-// Open the lightbox when the page loads
 window.onload = function() {
-    openLightbox();
-};
+    openLightbox()
+}
+
+function closeLightbox() {
+    document.getElementById('overlay').style.display = 'none'
+}
+
+function openLightbox() {
+    document.getElementById('overlay').style.display = 'block'
+}
+
+document.getElementById('closeButton').addEventListener('click', closeLightbox)
+document.getElementById('okay').addEventListener('click', closeLightbox)
