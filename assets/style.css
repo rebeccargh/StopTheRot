@@ -273,7 +273,7 @@ button {
 	font-size: calc(var(--font-size)*0.9);
 }
 
-button, #allOptions {
+button, #allOptions, .nav {
 	border: solid 3px var(--color);
 	background-color: #c3c3c3;
 	box-shadow: inset 2px 2px 0px 0px #ffffff;
