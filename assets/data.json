@@ -106,7 +106,7 @@
     {
         "itemName": "Pick an entire storage space (wardrobe, dresser, unit) and clean, toss & reorganize",
         "emoji": "📦",
-        "activityRating": 8,
+        "activityRating": 9,
         "costsMoney": 0,
         "requiresTransit": 0,
         "productive": 1
@@ -114,7 +114,7 @@
     {
         "itemName": "Laundry.",
         "emoji": "🧺",
-        "activityRating": 7,
+        "activityRating": 6,
         "costsMoney": 1,
         "requiresTransit": 0,
         "productive": 1

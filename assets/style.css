@@ -74,7 +74,6 @@ li {
 	padding-bottom: calc(var(--gutter)*1);
 	padding-left: calc(var(--gutter)*1.2);
 	padding-right: calc(var(--gutter)*1.2);
-	/* align-content: center; */
 	box-shadow: 4px 4px 0px 0px #000000;
 }
 
