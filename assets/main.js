@@ -258,13 +258,3 @@ function openLightbox() {
 
 document.getElementById('closeButton').addEventListener('click', closeLightbox)
 document.getElementById('okay').addEventListener('click', closeLightbox)
-
-
-// Fix for buttons not returning to default on mobile
-document.addEventListener('touchstart', function(event) {
-	if (event.target.nodeName === 'A') {
-		setTimeout(function() {
-			event.target.blur()
-		}, 100)
-	}
-}, false)
