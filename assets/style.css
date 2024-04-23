@@ -285,7 +285,7 @@ button, #allOptions, .nav {
 	cursor: pointer;
 }
 
-button:hover, #allOptions:hover, .nav:hover,  #scrollPrompt:hover, button:focus, #allOptions:focus, .nav:focus, #scrollPrompt:focus {
+button:active, #allOptions:active, .nav:active,  #scrollPrompt:active, #allOptions:active {
 	color: var(--background-color);
 	background: var(--secondary-color);
 	border-color: var(--secondary-color);
@@ -293,8 +293,6 @@ button:hover, #allOptions:hover, .nav:hover,  #scrollPrompt:hover, button:focus,
 	transition: 0.2s;
 	box-shadow: 4px 4px 0px 0px #000000;
 }
-/* #allOptions:active, */
-
 
 /* Footer */
 footer {
@@ -553,6 +551,14 @@ footer p:nth-of-type(3) {
 	}
 	button {
 		font-size: calc(var(--font-size)*1.1);
+	}
+	button:hover, #allOptions:hover, .nav:hover,  #scrollPrompt:hover {
+		color: var(--background-color);
+		background: var(--secondary-color);
+		border-color: var(--secondary-color);
+		font-weight: 500;
+		transition: 0.2s;
+		box-shadow: 4px 4px 0px 0px #000000;
 	}
 	#topButton {
 		display: none;
