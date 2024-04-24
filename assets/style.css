@@ -527,7 +527,7 @@ footer p:nth-of-type(3) {
     left: 40%;
 	max-height: 70vh;
 	width: 80vw;
-	transform: translate(-35%, 20%);
+	transform: translate(-35%, 60%);
 	}
 	#lightHead, #lightPara, #data-list {
 		padding-left: calc(var(--gutter)*2);
