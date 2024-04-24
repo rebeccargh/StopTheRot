@@ -485,10 +485,6 @@ footer p:nth-of-type(3) {
 	.slider {
 		width: 50vw;
 	}
-	.filters {
-		flex-direction: row;
-		column-gap: calc(var(--gutter)*0.5);
-	}
 	#scrollPrompt {
 		margin-top: calc(var(--gutter)*1.7);
 		margin-bottom: calc(var(--gutter)*1.5);
@@ -501,6 +497,13 @@ footer p:nth-of-type(3) {
 		gap: calc(var(--gutter)*1.5);
 		padding-left: 0;
 		padding-right: 0;
+	}
+}
+
+@media (min-width: 700px) {
+	.filters {
+		flex-direction: row;
+		column-gap: calc(var(--gutter)*0.5);
 	}
 }
 
